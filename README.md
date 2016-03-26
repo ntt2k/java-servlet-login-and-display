@@ -4,8 +4,8 @@ Java Servlet Login and Display
 Most web app start with Login system and Display data.This simple app serves those purposes.
 Building backend with Tomcat 7 & MySQL 5 for simple Login system and Display responsive Data Table with Bootstrap 3.
 
-![Screenshot](login.png)
-![Screenshot](display.png)
+![Screenshot](screenshot/login.png)
+![Screenshot](screenshot/display.png)
 
 Installation
 ------------
