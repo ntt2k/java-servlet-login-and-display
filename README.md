@@ -14,6 +14,12 @@ Installation
 + Create MySQL database through script 'createtable_composite.sql' inside 'database' folder.
 + Import whole project into Eclipse & click Run As --> Maven build.
 
+Version History
+---------------
+
+v0.12:
+  + Fixed closing all database connections after each session use or logout.
+
 Credit
 -------
 Basic interview project by http://www.compositeapps.net/

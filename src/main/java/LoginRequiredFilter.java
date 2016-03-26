@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginRequiredFilter implements Filter {
 
     public void destroy() {
-
+    	LoginDao.closeConnection();
     }
 
     public void doFilter(ServletRequest servletRequest,

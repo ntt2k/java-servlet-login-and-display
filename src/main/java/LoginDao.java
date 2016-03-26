@@ -96,10 +96,12 @@ public class LoginDao {
 	     
 		 connection = LoginDao.getConnection();   
 	     ArrayList<Employee> employeeList = new ArrayList<Employee>();
+	     Statement statement = null;
+	     ResultSet rs = null;
 	        
 	        try {
-	            Statement statement = connection.createStatement();
-	            ResultSet rs = statement.executeQuery("SELECT * FROM EMPLOYEES LIMIT 100");
+	            statement = connection.createStatement();
+	            rs = statement.executeQuery("SELECT * FROM EMPLOYEES LIMIT 100");
 
 	            while(rs.next()) {
 	             
@@ -117,7 +119,35 @@ public class LoginDao {
 	        catch (SQLException e) {
 	            e.printStackTrace();
 	        }
+	        
+	        finally {
+	        	if (rs != null) {
+	                try {
+	                    rs.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	            
+	            if (statement != null) {
+	                try {
+	                	statement.close();
+	                } catch (SQLException e) {
+	                	e.printStackTrace();
+	                }
+	            }
+	            
+	        }
 
 	        return employeeList;
 	    }
+	public static void closeConnection() {
+		if (connection != null) {
+            try {
+            	connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+	}
 }
